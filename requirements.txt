@@ -1,0 +1,10 @@
+ultralytics
+tensorboard
+torch
+pandas
+numpy
+scikit-learn
+Pillow
+pyproj
+scipy
+nbimporter
