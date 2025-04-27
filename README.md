@@ -17,12 +17,12 @@ Our solution enables **autonomous drone navigation** for detecting palettes and 
 - Extracts **bounding box coordinates** for further 3D pose estimation.
 
 ### `/pose_estimation`
-- Triangulates **GPS coordinates** from bounding box detections and drone metadata.
+- Triangulates **GPS coordinates** from bounding box detections and image metadata.
 - Estimates **3D positions** of detected palettes.
-- Fits **two parallel lines** across palettes using **least squares**.
+- Fits **two parallel lines** across palettes.
 
 ### `/kmz_file_generation`
-- Generates **KMZ (Google Earth)** route files based on triangulated coordinates.
+- Generates **KMZ** route files based on triangulated coordinates.
 - Prepares waypoints for flight path execution.
 
 ### `/output_kmz`
@@ -33,13 +33,16 @@ Our solution enables **autonomous drone navigation** for detecting palettes and 
 ## Pipeline Summary
 
 1. **Object Detection** → detect palettes and barcodes with YOLO.
-2. **Pose Estimation** → triangulate GPS positions from detections and metadata & fit parallel lines from the bounding boxes palettes.
+2. **Pose Estimation** → triangulate GPS positions from detections and image metadata, and fit parallel lines from the bounding boxes palettes.
 3. **KMZ Generation** → create waypoint files and execute flight plan.
+
 
 ---
 
 ## Notes
 
-- Flight paths are generated with a **10m offset** to safely view barcodes from a distance.
+- Pictures are taken with a distance of 10 m and a height of 5 m. 
 
 ---
+
+
